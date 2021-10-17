@@ -31,7 +31,9 @@
 
     <application>
 
-        <receiver android:name=".BootCompletedReceiver">
+        <receiver
+            android:name=".BootCompletedReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -40,6 +42,7 @@
 
         <activity
             android:name=".battery.ByPassChargingSettingsActivity"
+            android:exported="false"
             android:label="@string/bypasscharging_enable_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
@@ -56,6 +59,7 @@
 
         <activity
             android:name=".battery.ChargingLimitSettingsActivity"
+            android:exported="false"
             android:label="@string/charginglimit_enable_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
@@ -72,6 +76,7 @@
 
         <activity
             android:name=".battery.TurboChargingSettingsActivity"
+            android:exported="false"
             android:label="@string/turbocharging_enable_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
