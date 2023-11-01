@@ -1,7 +1,32 @@
+on boot
+    # Create haptic folden
+    mkdir /mnt/vendor/persist/haptic 0777 root root
+
+    # Set user group for haptic node
+    chown audioserver audioserver /sys/class/leds/vibrator/awrw
+    chown audioserver audioserver /sys/class/leds/vibrator/haptic_audio
+    chown system system /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/cali
+    chown system system /sys/class/leds/vibrator/cali_lra
+    chown system system /sys/class/leds/vibrator/double_duration
+    chown system system /sys/class/leds/vibrator/dual_cancel
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/rtp
+    chown system system /sys/class/leds/vibrator/state
+    chown system system /sys/class/leds/vibrator/trig
+    chown system system /sys/class/leds/vibrator/vmax
+
+    # Set permission for haptic trig node
+    chmod 0666 /sys/class/leds/vibrator/trig
+
 service vendor.qti.vibrator /vendor/bin/hw/vendor.qti.hardware.vibrator.service.lenovo_halo
     class hal
     user system
     group system input
+
+on init
+    # Vibrator
+    write /sys/module/firmware_class/parameters/path "/vendor/firmware/aw86917"
 
 on late-init
     write /sys/class/leds/vibrator/trigger "transient"
