@@ -35,6 +35,7 @@
 #include <inttypes.h>
 #include <linux/input.h>
 #include <log/log.h>
+#include <map>
 #include <string.h>
 #include <sys/ioctl.h>
 #include <thread>
@@ -70,6 +71,47 @@ namespace vibrator {
 #define test_bit(bit, array)    ((array)[(bit)/8] & (1<<((bit)%8)))
 
 static const char LED_DEVICE[] = "/sys/class/leds/vibrator";
+
+static const char LED_DEVICE_STATE[] = "/sys/class/leds/vibrator/state";
+static const char LED_DEVICE_DURATION[] = "/sys/class/leds/vibrator/duration";
+static const char LED_DEVICE_ACTIVATE[] = "/sys/class/leds/vibrator/activate";
+
+static std::map<Effect, std::vector<std::pair<std::string, std::string>>> LED_EFFECTS{
+    { Effect::CLICK, {
+        { LED_DEVICE_STATE, "1" },
+        { LED_DEVICE_DURATION, "10" },
+        { LED_DEVICE_ACTIVATE, "1" },
+    }},
+    { Effect::DOUBLE_CLICK, {
+        { LED_DEVICE_STATE, "1" },
+        { LED_DEVICE_DURATION, "10" },
+        { LED_DEVICE_ACTIVATE, "1" },
+        { "SLEEP", "150" },
+        { LED_DEVICE_STATE, "1" },
+        { LED_DEVICE_DURATION, "10" },
+        { LED_DEVICE_ACTIVATE, "1" },
+    }},
+    { Effect::TICK, {
+        { LED_DEVICE_STATE, "1" },
+        { LED_DEVICE_DURATION, "10" },
+        { LED_DEVICE_ACTIVATE, "1" },
+    }},
+    { Effect::POP, {
+        { LED_DEVICE_STATE, "1" },
+        { LED_DEVICE_DURATION, "70" },
+        { LED_DEVICE_ACTIVATE, "1" },
+    }},
+    { Effect::THUD, {
+        { LED_DEVICE_STATE, "1" },
+        { LED_DEVICE_DURATION, "70" },
+        { LED_DEVICE_ACTIVATE, "1" },
+    }},
+    { Effect::HEAVY_CLICK, {
+        { LED_DEVICE_STATE, "1" },
+        { LED_DEVICE_DURATION, "10" },
+        { LED_DEVICE_ACTIVATE, "1" },
+    }}
+};
 
 InputFFDevice::InputFFDevice()
 {
@@ -478,21 +520,35 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std
     long playLengthMs;
     int ret;
 
-    if (ledVib.mDetected)
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
-
     ALOGD("Vibrator perform effect %d", effect);
 
-    if (effect < Effect::CLICK ||
-            effect > Effect::HEAVY_CLICK)
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+    if (ledVib.mDetected) {
+        if (const auto it = LED_EFFECTS.find(effect); it != LED_EFFECTS.end()) {
+            for (const auto &[path, value] : it->second) {
+                if (path == "SLEEP") {
+                    usleep(atoi(value.c_str()) * 1000);
+                } else {
+                    ledVib.write_value(path.c_str(), value.c_str());
+                }
+            }
 
-    if (es != EffectStrength::LIGHT && es != EffectStrength::MEDIUM && es != EffectStrength::STRONG)
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+            // Return magic value for play length so that we won't end up calling on() / off()
+            playLengthMs = 150;
+        } else {
+            return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+        }
+    } else {
+        if (effect < Effect::CLICK ||
+                effect > Effect::HEAVY_CLICK)
+            return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 
-    ret = ff.playEffect((static_cast<int>(effect)), es, &playLengthMs);
-    if (ret != 0)
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_SERVICE_SPECIFIC));
+        if (es != EffectStrength::LIGHT && es != EffectStrength::MEDIUM && es != EffectStrength::STRONG)
+            return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+
+        ret = ff.playEffect((static_cast<int>(effect)), es, &playLengthMs);
+        if (ret != 0)
+            return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_SERVICE_SPECIFIC));
+    }
 
     if (callback != nullptr) {
         std::thread([=] {
@@ -508,12 +564,8 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std
 }
 
 ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_return) {
-    if (ledVib.mDetected)
-        return ndk::ScopedAStatus::ok();
-
     *_aidl_return = {Effect::CLICK, Effect::DOUBLE_CLICK, Effect::TICK, Effect::THUD,
-                     Effect::POP, Effect::HEAVY_CLICK};
-
+                         Effect::POP, Effect::HEAVY_CLICK};
     return ndk::ScopedAStatus::ok();
 }
 
@@ -628,4 +680,3 @@ ndk::ScopedAStatus Vibrator::composePwle(const std::vector<PrimitivePwle> &compo
 }  // namespace hardware
 }  // namespace android
 }  // namespace aidl
-
