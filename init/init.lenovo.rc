@@ -92,31 +92,9 @@ on post-fs-data
     # Goodix
     mkdir /data/vendor/goodix 0775 system system
 
-on init
-    # Vibrator
-    write /sys/module/firmware_class/parameters/path "/vendor/firmware/aw86917"
-
 on boot
     # Camera
     chmod 0666 /dev/dw9781c
     chown system camera /dev/dw9781c
 
     mkdir /mnt/vendor/persist/camera 0775 system system
-
-    # Vibrator
-    mkdir /mnt/vendor/persist/haptic 0777 root root
-
-    chown audioserver audioserver /sys/class/leds/vibrator/awrw
-    chown audioserver audioserver /sys/class/leds/vibrator/haptic_audio
-    chown system system /sys/class/leds/vibrator/activate
-    chown system system /sys/class/leds/vibrator/cali
-    chown system system /sys/class/leds/vibrator/cali_lra
-    chown system system /sys/class/leds/vibrator/double_duration
-    chown system system /sys/class/leds/vibrator/dual_cancel
-    chown system system /sys/class/leds/vibrator/duration
-    chown system system /sys/class/leds/vibrator/rtp
-    chown system system /sys/class/leds/vibrator/state
-    chown system system /sys/class/leds/vibrator/trig
-    chown system system /sys/class/leds/vibrator/vmax
-
-    chmod 0666 /sys/class/leds/vibrator/trig
