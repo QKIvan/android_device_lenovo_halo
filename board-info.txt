@@ -1,1 +1,1 @@
-require board=taro|Pong
+require board=taro|halo

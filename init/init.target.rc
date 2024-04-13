@@ -63,6 +63,7 @@
 #
 
 import /vendor/etc/init/hw/init.qti.kernel.rc
+import /odm/etc/init/hw/init.lenovo.rc
 
 on early-init
     write /proc/sys/kernel/printk_devkmsg ratelimited
@@ -186,6 +187,15 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.shutdown.requested=*
     write /sys/kernel/qcom_rproc/shutdown_in_progress 1
     stop vendor.per_proxy
+
+on property:vold.decrypt=trigger_restart_framework
+   start vendor.cnss_diag
+
+service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
+   class main
+   user system
+   group system wifi inet sdcard_rw media_rw diag
+   oneshot
 
 on early-boot && property:persist.vendor.pcie.boot_option=*
     write /sys/bus/platform/devices/1c00000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}

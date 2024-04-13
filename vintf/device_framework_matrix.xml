@@ -1,0 +1,33 @@
+<compatibility-matrix version="1.0" type="framework">
+    <hal format="hidl">
+        <name>com.fingerprints.extension</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFingerprintEngineering</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSensorTest</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.goodix.extend.service</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IGoodixFPExtendService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.zui.hardware.ifaa</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IIFAADevice</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

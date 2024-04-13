@@ -1,0 +1,122 @@
+#
+# Copyright (C) 2023 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+on post-fs
+    # Audio
+    chmod 0666 /mnt/vendor/persist/factory/audio/aw_cali.bin
+
+    # Goodix
+    chmod 0666 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+
+    mkdir /mnt/vendor/persist/fpdata 0775 system system
+    chmod 0666 /mnt/vendor/persist/fpdata/BMatrix.so
+    chmod 0666 /mnt/vendor/persist/fpdata/caliParamsInfo.so
+    chmod 0666 /mnt/vendor/persist/fpdata/cali_data.so
+    chmod 0666 /mnt/vendor/persist/fpdata/chartbase.so
+    restorecon_recursive /mnt/vendor/persist/fpdata
+
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/clk_enable
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/compatible_all
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/device_prepare
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/driver_override
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/handle_wakelock
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/hw_reset
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/irq
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/modalias
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/offlock_enable
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/pinctl_set
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/regulator_enable
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/uevent
+    chmod 0666 /sys/devices/platform/soc/soc:fpc1020/wakeup_enable
+
+    # Thermal
+    chmod 0666 /sys/class/hwmon/hwmon0/fan_level
+    chmod 0666 /sys/class/hwmon/hwmon0/fan0_duty
+    chmod 0666 /sys/class/hwmon/hwmon0/fan0_enable
+    chmod 0666 /sys/class/hwmon/hwmon0/fan0_fg
+    chmod 0666 /sys/class/hwmon/hwmon0/fan0_level1
+    chmod 0666 /sys/class/hwmon/hwmon0/fan0_level2
+    chmod 0666 /sys/class/hwmon/hwmon0/fan0_level3
+    chmod 0666 /sys/class/hwmon/hwmon0/fan0_level4
+    chmod 0666 /sys/class/hwmon/hwmon0/fan0_level5
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_duty
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_enable
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_fg
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_fr
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_level1
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_level2
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_level3
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_level4
+    chmod 0666 /sys/class/hwmon/hwmon0/fan1_level5
+    chmod 0666 /sys/class/hwmon/hwmon0/thermal_fan
+    chmod 0666 /sys/class/hwmon/hwmon0/user_enable
+    chown system system /sys/class/hwmon/hwmon0/fan_level
+    chown system system /sys/class/hwmon/hwmon0/fan0_duty
+    chown system system /sys/class/hwmon/hwmon0/fan0_enable
+    chown system system /sys/class/hwmon/hwmon0/fan0_fg
+    chown system system /sys/class/hwmon/hwmon0/fan0_level1
+    chown system system /sys/class/hwmon/hwmon0/fan0_level2
+    chown system system /sys/class/hwmon/hwmon0/fan0_level3
+    chown system system /sys/class/hwmon/hwmon0/fan0_level4
+    chown system system /sys/class/hwmon/hwmon0/fan0_level5
+    chown system system /sys/class/hwmon/hwmon0/fan1_duty
+    chown system system /sys/class/hwmon/hwmon0/fan1_enable
+    chown system system /sys/class/hwmon/hwmon0/fan1_fg
+    chown system system /sys/class/hwmon/hwmon0/fan1_fr
+    chown system system /sys/class/hwmon/hwmon0/fan1_level1
+    chown system system /sys/class/hwmon/hwmon0/fan1_level2
+    chown system system /sys/class/hwmon/hwmon0/fan1_level3
+    chown system system /sys/class/hwmon/hwmon0/fan1_level4
+    chown system system /sys/class/hwmon/hwmon0/fan1_level5
+    chown system system /sys/class/hwmon/hwmon0/thermal_fan
+    chown system system /sys/class/hwmon/hwmon0/user_enable
+
+    chmod 0666 /sys/class/hwmon/hwmon1/camera
+    chmod 0666 /sys/class/hwmon/hwmon1/display_rate
+    chmod 0666 /sys/class/hwmon/hwmon1/modem_5g
+    chmod 0666 /sys/class/hwmon/hwmon1/speaker
+    chown system system /sys/class/hwmon/hwmon1/camera
+    chown system system /sys/class/hwmon/hwmon1/display_rate
+    chown system system /sys/class/hwmon/hwmon1/modem_5g
+    chown system system /sys/class/hwmon/hwmon1/speaker
+
+on post-fs-data
+    # Camera
+    copy /vendor/etc/camera/portrait/PS_F_N_v3_E.m.awcache /data/vendor/camera/PS_F_N_v3_E.m.awcache
+    chown cameraserver audio data/vendor/camera/PS_F_N_v3_E.m.awcache
+
+    # Goodix
+    mkdir /data/vendor/goodix 0775 system system
+
+on init
+    # Vibrator
+    write /sys/module/firmware_class/parameters/path "/vendor/firmware/aw86917"
+
+on boot
+    # Camera
+    chmod 0666 /dev/dw9781c
+    chown system camera /dev/dw9781c
+
+    mkdir /mnt/vendor/persist/camera 0775 system system
+
+    # Vibrator
+    mkdir /mnt/vendor/persist/haptic 0777 root root
+
+    chown audioserver audioserver /sys/class/leds/vibrator/awrw
+    chown audioserver audioserver /sys/class/leds/vibrator/haptic_audio
+    chown system system /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/cali
+    chown system system /sys/class/leds/vibrator/cali_lra
+    chown system system /sys/class/leds/vibrator/double_duration
+    chown system system /sys/class/leds/vibrator/dual_cancel
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/rtp
+    chown system system /sys/class/leds/vibrator/state
+    chown system system /sys/class/leds/vibrator/trig
+    chown system system /sys/class/leds/vibrator/vmax
+
+    chmod 0666 /sys/class/leds/vibrator/trig
