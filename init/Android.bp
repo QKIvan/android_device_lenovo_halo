@@ -10,9 +10,9 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.nt.rc",
-    src: "init.nt.rc",
-    sub_dir: "init",
+    name: "init.lenovo.rc",
+    src: "init.lenovo.rc",
+    sub_dir: "init/hw",
     device_specific: true,
 }
 
@@ -38,9 +38,9 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "ueventd.nt.rc",
+    name: "ueventd.lenovo.rc",
     filename: "ueventd.rc",
-    src: "ueventd.nt.rc",
+    src: "ueventd.lenovo.rc",
     device_specific: true,
 }
 

@@ -8,8 +8,16 @@
 
 set -e
 
-DEVICE=Pong
-VENDOR=nothing
+DEVICE=halo
+VENDOR=lenovo
+
+function blob_fixup() {
+    case "${1}" in
+        vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
+            "${SIGSCAN}" -p "9A 0A 00 94" -P "1F 20 03 D5" -f "${2}"
+            ;;
+    esac
+}
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

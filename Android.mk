@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter Pong,$(TARGET_DEVICE)),)
+ifneq ($(filter halo,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
@@ -28,7 +28,12 @@ $(DSP_MOUNT_POINT): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating $(DSP_MOUNT_POINT)"
 	@mkdir -p $(TARGET_OUT_VENDOR)/dsp
 
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT) $(BT_FIRMWARE_MOUNT_POINT) $(DSP_MOUNT_POINT)
+VM_SYSTEM_MOUNT_POINT := $(TARGET_OUT_VENDOR)/vm-system
+$(VM_SYSTEM_MOUNT_POINT): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating $(VM_SYSTEM_MOUNT_POINT)"
+	@mkdir -p $(TARGET_OUT_VENDOR)/vm-system
+
+ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT) $(BT_FIRMWARE_MOUNT_POINT) $(DSP_MOUNT_POINT) $(VM_SYSTEM_MOUNT_POINT)
 
 CNE_LIBS := libvndfwk_detect_jni.qti_vendor.so
 CNE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_APPS)/CneApp/lib/arm64/,$(notdir $(CNE_LIBS)))
