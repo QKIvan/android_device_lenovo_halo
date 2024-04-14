@@ -148,7 +148,6 @@ vendor/etc/usecaseKvManager.xml|2a0170f7556b0f5cbbef4ae5f827c755e324a058
 -vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
 
 # Audio (Listen)
-vendor/lib64/hw/sound_trigger.primary.taro.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
