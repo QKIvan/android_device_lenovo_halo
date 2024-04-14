@@ -22,12 +22,9 @@ vendor/etc/acdbdata/waipio_mtp/MTP_workspaceFileXml.qwsp|7b4fb1264a2b1e6272daef6
 
 # ADSP - from halo
 vendor/bin/adsprpcd|4821003d01528b1fb5b7b409cd80e4307129ec9d
-vendor/bin/loadalgo|5874e9a9f2a79073450c7bb581ed8b13e18c8063
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc|8f0eb84d3eb5fc0f683ef7b975b75044d56f513e
-vendor/etc/init/vendor.qti.audio-adsprpc-service.rc|b2427ab31c6505ca02a785a0b2d9f7d5e2f86801
 vendor/lib64/libadsp_default_listener.so|45f836a63fa31f73032e53df5053a14f5b0c84fb
 vendor/lib64/libadsprpc.so|306aab1e650be8d628965afb5673b7e27597064f
-vendor/lib64/libloadalgo_stub.so|a75e4b1788a87894609c096dc8e466b2c86ae2e9
 
 # ADSP modules - from halo
 vendor/lib/rfsa/adsp/bm2n00.bin|17cf41d22ec704e198badddc407cde9dbe100e13
@@ -122,8 +119,6 @@ vendor/lib/rfsa/adsp/libvpt_action_recognition.so|ff8198eaab4dace8388dcaf876e471
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Audio - from halo
-vendor/etc/vintf/manifest/manifest_non_qmaa.xml|ca8933881af97d5050e71ca7a2ecce4333c210d4
-vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml|976d39efc9a627fa167bec59e39dabd3a04c2ca9
 -vendor/lib/libar-pal.so|8a137f65750249793eebc3ccf44c86922d8f0635
 vendor/lib64/hw/audio.primary.taro.so|387d4c04c4f5b4404dc3464eb1ea59019bb704ab
 vendor/lib64/hw/sound_trigger.primary.taro.so|d18e67ccab2fed3cb670f86495de5823d9d26fad
@@ -134,23 +129,18 @@ vendor/lib64/libar-gsl.so|b9d77c033f0cb1749a60a98325738b5eb6280799
 -vendor/lib64/libar-pal.so|10ac0d6c8d06b32a7d8ae5f44a16c72ca7074ea3
 vendor/lib64/libats.so|f5873c1b3cb6c46291723c1866b24e56e4091d33
 vendor/lib64/libaudio_log_utils.so|a3316d1bc8edd9a6d6524211bb19119571e7659e
-vendor/lib64/libbatterylistener.so|43a2e47807133bb22426f7f88c2ee5ff94096e02
 vendor/lib64/libcapiv2svacnnvendor.so|a495f124ee875014fc0e3e149dd766384c333cfe
 vendor/lib64/libcapiv2svarnnvendor.so|7c15f238e8d8f61d5a9c777c9bb6a346a18a8951
 vendor/lib64/libcapiv2uvvendor.so|8f2b67f51c054c5a6be1593fad5d320334a0c7f9
 vendor/lib64/libeai_fixed.so|d43c8f3a75f5ae4fcf9cd11a15832fbcd95fdd5a
 vendor/lib64/libeai_float.so|883e4f4e6d64adf9ffbe2d4aaef1ede015611826
-vendor/lib64/libfmpal.so|58bfd018a0258109f3ba1bc8fdf5621c151eb763
 vendor/lib64/liblistensoundmodel2vendor.so|ee85d4915b05b1fd8714ae0c84c3455c87da58ef
 vendor/lib64/liblx-ar_util.so|fda56465f50f0aeb0c1dc0c79b5ef4f4d99d59ba
 vendor/lib64/liblx-osal.so|a99ed8e3bdcac26616275a8d8e13c313cf4458d6
 vendor/lib64/libmcs.so|8eceb9317c5235c949bc03018a783274b6746169
-vendor/lib64/libpalclient.so|dfadaf0ea608f4ae181b435bae592302942f2906
 vendor/lib64/libqtigefar.so|5d412fff55d09ee43745db9a1651d71740f32720
-vendor/lib64/libsndcardparser.so|0302e83bebe692f027e7505274098a9657a50f27
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so|00debcfad5f87b346337257e79656779c4513355
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so|f91f1059168ae7e6fbb79a7c37041271408de5f9
-vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so|32bd0e103b5142018a426f85165ecc2163546c2f
 vendor/lib64/vendor.qti.voiceprint@1.0.so|3acfe5b36aa725ee4d0067b3657bb2c5347d8f48
 
 # Audio config - from halo
@@ -162,20 +152,9 @@ vendor/etc/microphone_characteristics.xml|133a6a72803e9d6b61f19e0861d2a2597c2e9c
 vendor/etc/usecaseKvManager.xml|2a0170f7556b0f5cbbef4ae5f827c755e324a058
 
 # Audio (AGM)
-vendor/bin/hw/vendor.qti.hardware.AGMIPC@1.0-service
-vendor/bin/agmcap
-vendor/bin/agmcompressplay
-vendor/bin/agmplay
 -vendor/lib/libagm.so
--vendor/lib/vendor.qti.hardware.AGMIPC@1.0-impl.so
 -vendor/lib64/libagm.so
-vendor/lib64/libagm_compress_plugin.so
-vendor/lib64/libagm_mixer_plugin.so
-vendor/lib64/libagm_pcm_plugin.so
-vendor/lib64/libagmclient.so
-vendor/lib64/libagmmixer.so
 -vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so
 
 # Audio (soundfx)
 system_ext/etc/permissions/audiosphere.xml
@@ -597,7 +576,6 @@ vendor/lib64/vendor.qti.latency@2.1.so
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
-vendor/lib64/libplatformconfig.so
 
 # Connection Security
 vendor/bin/ssgqmigd64

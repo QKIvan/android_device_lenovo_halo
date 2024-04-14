@@ -71,6 +71,9 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     audioadsprpcd \
+    libagm_compress_plugin \
+    libagm_mixer_plugin \
+    libagm_pcm_plugin \
     libbatterylistener \
     libhfp_pal \
     libqcompostprocbundle \
