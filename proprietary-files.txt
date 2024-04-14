@@ -121,7 +121,6 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 # Audio - from halo
 -vendor/lib/libar-pal.so|8a137f65750249793eebc3ccf44c86922d8f0635
 vendor/lib64/hw/audio.primary.taro.so|387d4c04c4f5b4404dc3464eb1ea59019bb704ab
-vendor/lib64/hw/sound_trigger.primary.taro.so|d18e67ccab2fed3cb670f86495de5823d9d26fad
 vendor/lib64/libadm.so|2d21fe85792cb1819c7c473c3cc0f5fed93f6d64
 vendor/lib64/libar-acdb.so|831304ccf0c6ae444257b4976726873ae6318815
 vendor/lib64/libar-gpr.so|7260cd66facd7628e6972c0c63ed1b51fa994e66
@@ -129,18 +128,10 @@ vendor/lib64/libar-gsl.so|b9d77c033f0cb1749a60a98325738b5eb6280799
 -vendor/lib64/libar-pal.so|10ac0d6c8d06b32a7d8ae5f44a16c72ca7074ea3
 vendor/lib64/libats.so|f5873c1b3cb6c46291723c1866b24e56e4091d33
 vendor/lib64/libaudio_log_utils.so|a3316d1bc8edd9a6d6524211bb19119571e7659e
-vendor/lib64/libcapiv2svacnnvendor.so|a495f124ee875014fc0e3e149dd766384c333cfe
-vendor/lib64/libcapiv2svarnnvendor.so|7c15f238e8d8f61d5a9c777c9bb6a346a18a8951
-vendor/lib64/libcapiv2uvvendor.so|8f2b67f51c054c5a6be1593fad5d320334a0c7f9
-vendor/lib64/libeai_fixed.so|d43c8f3a75f5ae4fcf9cd11a15832fbcd95fdd5a
-vendor/lib64/libeai_float.so|883e4f4e6d64adf9ffbe2d4aaef1ede015611826
-vendor/lib64/liblistensoundmodel2vendor.so|ee85d4915b05b1fd8714ae0c84c3455c87da58ef
 vendor/lib64/liblx-ar_util.so|fda56465f50f0aeb0c1dc0c79b5ef4f4d99d59ba
 vendor/lib64/liblx-osal.so|a99ed8e3bdcac26616275a8d8e13c313cf4458d6
 vendor/lib64/libmcs.so|8eceb9317c5235c949bc03018a783274b6746169
 vendor/lib64/libqtigefar.so|5d412fff55d09ee43745db9a1651d71740f32720
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so|00debcfad5f87b346337257e79656779c4513355
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so|f91f1059168ae7e6fbb79a7c37041271408de5f9
 vendor/lib64/vendor.qti.voiceprint@1.0.so|3acfe5b36aa725ee4d0067b3657bb2c5347d8f48
 
 # Audio config - from halo
@@ -155,6 +146,17 @@ vendor/etc/usecaseKvManager.xml|2a0170f7556b0f5cbbef4ae5f827c755e324a058
 -vendor/lib/libagm.so
 -vendor/lib64/libagm.so
 -vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
+
+# Audio (Listen)
+vendor/lib64/hw/sound_trigger.primary.taro.so
+vendor/lib64/libcapiv2svacnnvendor.so
+vendor/lib64/libcapiv2svarnnvendor.so
+vendor/lib64/libcapiv2uvvendor.so
+vendor/lib64/libeai_fixed.so
+vendor/lib64/libeai_float.so
+vendor/lib64/liblistensoundmodel2vendor.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 
 # Audio (soundfx)
 system_ext/etc/permissions/audiosphere.xml
