@@ -1,0 +1,3 @@
+# NVRAM
+ro.product.countrycode                  u:object_r:nvram_lenovo_prop:s0
+sys.lenovosn                            u:object_r:nvram_lenovo_prop:s0
