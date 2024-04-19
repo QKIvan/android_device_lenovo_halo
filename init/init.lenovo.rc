@@ -4,6 +4,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+service sim-restart /system/bin/init.sim.restart.sh
+    class main
+    user root
+    oneshot
+    disabled
+
 on post-fs
     # Audio
     chmod 0666 /mnt/vendor/persist/factory/audio/aw_cali.bin
@@ -122,3 +128,6 @@ on property:sys.boot_completed=1
     # Restart camera server
     start vendor.camera-provider-2-7
     start cameraserver
+
+    # Restart SIM card
+    start sim-restart
