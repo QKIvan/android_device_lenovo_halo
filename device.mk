@@ -245,6 +245,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
+    init.sim.restart.sh \
     init.target.rc \
     ueventd.lenovo.rc \
     ueventd.qcom.rc
