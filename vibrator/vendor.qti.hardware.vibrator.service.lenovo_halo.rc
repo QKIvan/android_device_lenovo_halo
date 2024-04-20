@@ -1,3 +1,10 @@
+on early-boot
+    # Start reload vibrator kernel module
+    # Umount AW8691 haptics driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/rmmod aw8691x_haptic
+    # Load AW8691 haptics driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/insmod /vendor/lib/modules/aw8691x_haptic.ko
+
 on boot
     # Create haptic folden
     mkdir /mnt/vendor/persist/haptic 0777 root root
