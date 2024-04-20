@@ -339,6 +339,23 @@
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">144</integer>
 
+    <!-- Indicates whether device has a power button fingerprint sensor. -->
+    <bool name="config_is_powerbutton_fps">true</bool>
+
+    <!-- An array of arrays of side fingerprint sensor properties relative to each display.
+         Note: this value is temporary and is expected to be queried directly
+         from the HAL in the future. -->
+    <array name="config_sfps_sensor_props" translatable="false">
+        <item>@array/config_sfps_sensor_props_0</item>
+    </array>
+
+    <array name="config_sfps_sensor_props_0" translatable="false">
+        <item>local:4630946450855720066</item>
+        <item>1080</item>
+        <item>1015</item>
+        <item>200</item>
+    </array>
+
     <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
          device from the display on/off state.
 
