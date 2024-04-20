@@ -11,7 +11,7 @@ debug.sf.enable_hwc_vds=1
 # Camera
 vendor.lenovocamera.packagename.zui=1
 vendor.camera.packagename.zui=1
-vendor.camera.aux.packagelist=com.zui.camera
+vendor.camera.aux.packagelist=com.zui.camera,org.lineageos.aperture
 
 # CNE
 persist.vendor.cne.feature=1
