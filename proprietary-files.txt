@@ -135,7 +135,6 @@ vendor/lib64/libqtigefar.so|5d412fff55d09ee43745db9a1651d71740f32720
 vendor/lib64/vendor.qti.voiceprint@1.0.so|3acfe5b36aa725ee4d0067b3657bb2c5347d8f48
 
 # Audio config - from halo
-vendor/etc/audio/sku_cape/mixer_paths_waipio_mtp.xml|bfba89a1d920c0f90cdf3407bb4ef0f1fe1ab4d6
 vendor/etc/audio/sku_cape/resourcemanager_waipio_mtp.xml|a66e0a8fa0dd28046ed06b97c9f75239c254c718
 vendor/etc/backend_conf.xml|99c989974591dd61705093b7a232eb5ad95029b7
 vendor/etc/card-defs.xml|e993721d3728e2179261319f40706dfddc274b4c
