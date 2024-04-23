@@ -8,6 +8,11 @@ dalvik.vm.dex2oat64.enabled=true
 # Display
 debug.sf.enable_hwc_vds=1
 
+# Camera
+vendor.lenovocamera.packagename.zui=1
+vendor.camera.packagename.zui=1
+vendor.camera.aux.packagelist=com.zui.camera
+
 # CNE
 persist.vendor.cne.feature=1
 

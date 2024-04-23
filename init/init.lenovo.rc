@@ -98,3 +98,16 @@ on boot
     chown system camera /dev/dw9781c
 
     mkdir /mnt/vendor/persist/camera 0775 system system
+
+on property:sys.boot_completed=1
+    # Stop camera server
+    stop vendor.camera-provider-2-7
+    stop cameraserver
+
+    # Set prop to 0 to solve the ois problem
+    setprop vendor.lenovocamera.packagename.zui 0
+    setprop vendor.camera.packagename.zui 0
+
+    # Restart camera server
+    start vendor.camera-provider-2-7
+    start cameraserver
