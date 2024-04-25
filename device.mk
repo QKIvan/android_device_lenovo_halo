@@ -362,6 +362,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Parts
+PRODUCT_PACKAGES += \
+    LegionParts
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
