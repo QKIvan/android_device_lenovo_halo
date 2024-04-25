@@ -18,5 +18,8 @@
 # Thermal
 /dev/lenovo_sys_temp                                                    u:object_r:thermal_device:s0
 
+# Touchpanel
+/sys/devices/virtual/touch/tp_dev/gesture_on                            u:object_r:sysfs_touchpanel:s0
+
 # Vibrator
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.lenovo_halo    u:object_r:hal_vibrator_default_exec:s0
