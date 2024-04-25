@@ -256,6 +256,10 @@ PRODUCT_PACKAGES += \
     ueventd.lenovo.rc \
     ueventd.qcom.rc
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/goodix_ts.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/goodix_ts.kl
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster-V3-ndk_platform.vendor \

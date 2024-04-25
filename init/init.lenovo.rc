@@ -99,6 +99,9 @@ on boot
 
     mkdir /mnt/vendor/persist/camera 0775 system system
 
+    # Gesture
+    chown system system /sys/devices/virtual/touch/tp_dev/gesture_on
+
 on property:sys.boot_completed=1
     # Stop camera server
     stop vendor.camera-provider-2-7
