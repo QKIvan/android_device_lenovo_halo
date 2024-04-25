@@ -1,0 +1,3 @@
+# Allow Power HAL to access DT2W node.
+allow hal_power_default sysfs_touchpanel:dir search;
+allow hal_power_default sysfs_touchpanel:file rw_file_perms;
