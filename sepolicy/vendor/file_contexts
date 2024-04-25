@@ -1,3 +1,8 @@
+# Battery
+/sys/class/qcom-battery/batt_charge_bypass_en                           u:object_r:vendor_sysfs_battery_supply:s0
+/sys/class/qcom-battery/batt_charge_accelerate_en                       u:object_r:vendor_sysfs_battery_supply:s0
+/sys/class/qcom-battery/batt_charge_health_en                           u:object_r:vendor_sysfs_battery_supply:s0
+
 # Camera
 /vendor/lib(64)?/libipebpsstriping\.so		                            u:object_r:same_process_hal_file:s0
 

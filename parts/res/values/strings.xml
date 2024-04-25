@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- ByPass Charging settings -->
+    <string name="bypasscharging_enable_title">ByPass Charging</string>
+    <string name="bypasscharging_enable_summary">Reduced heat caused by charging in the game</string>
+    <string name="bypasscharging_enable_summary_not_supported">ByPass Charging is currently not supported by the kernel</string>
+
+    <!-- Charging Limit settings -->
+    <string name="charginglimit_enable_title">Charging Optimization</string>
+    <string name="charginglimit_enable_summary">To reduce battery aging，device will only charge to 90%</string>
+    <string name="charginglimit_enable_summary_not_supported">Charging Optimization is currently not supported by the kernel</string>
+
+    <!-- Turbo Charging settings -->
+    <string name="turbocharging_enable_title">Turbo Charging</string>
+    <string name="turbocharging_enable_summary">Increase charging speed</string>
+    <string name="turbocharging_enable_summary_not_supported">Turbo Charging is currently not supported by the kernel</string>
+</resources>
