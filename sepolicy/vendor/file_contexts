@@ -22,7 +22,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.zui\.hardware\.ifaa@1\.0-service u:object_r:hal_ifaa_default_exec:s0
 
 # NFC
-/vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                u:object_r:hal_nfc_default_exec:s0
+/vendor/bin/hw/android.hardware\.nfc-service\.nxp                       u:object_r:hal_nfc_default_exec:s0
 
 # Thermal
 /dev/lenovo_sys_temp                                                    u:object_r:thermal_device:s0
