@@ -19,7 +19,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/charginglimit_enable_title">
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="charginglimit_enable"
         android:defaultValue="false"
         android:title="@string/charginglimit_enable_title"
