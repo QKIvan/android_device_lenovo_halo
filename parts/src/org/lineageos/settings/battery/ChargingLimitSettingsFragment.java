@@ -21,7 +21,7 @@ import android.os.Bundle;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.settings.R;
 import org.lineageos.settings.utils.FileUtils;
@@ -29,14 +29,14 @@ import org.lineageos.settings.utils.FileUtils;
 public class ChargingLimitSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private SwitchPreference mChargingLimitPreference;
+    private SwitchPreferenceCompat mChargingLimitPreference;
     private static final String CHARGINGLIMIT_ENABLE_KEY = "charginglimit_enable";
     private static final String CHARGINGLIMIT_NODE = "/sys/class/qcom-battery/batt_charge_health_en";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.charginglimit_settings);
-        mChargingLimitPreference = (SwitchPreference) findPreference(CHARGINGLIMIT_ENABLE_KEY);
+        mChargingLimitPreference = (SwitchPreferenceCompat) findPreference(CHARGINGLIMIT_ENABLE_KEY);
         if (FileUtils.fileExists(CHARGINGLIMIT_NODE)) {
             mChargingLimitPreference.setEnabled(true);
             mChargingLimitPreference.setOnPreferenceChangeListener(this);
