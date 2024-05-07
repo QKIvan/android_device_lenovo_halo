@@ -21,7 +21,7 @@ import android.os.Bundle;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.settings.R;
 import org.lineageos.settings.utils.FileUtils;
@@ -29,14 +29,14 @@ import org.lineageos.settings.utils.FileUtils;
 public class TurboChargingSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private SwitchPreference mTurboChargingPreference;
+    private SwitchPreferenceCompat mTurboChargingPreference;
     private static final String TURBOCHARGING_ENABLE_KEY = "turbocharging_enable";
     private static final String TURBOCHARGING_NODE = "/sys/class/qcom-battery/batt_charge_accelerate_en";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.turbocharging_settings);
-        mTurboChargingPreference = (SwitchPreference) findPreference(TURBOCHARGING_ENABLE_KEY);
+        mTurboChargingPreference = (SwitchPreferenceCompat) findPreference(TURBOCHARGING_ENABLE_KEY);
         if (FileUtils.fileExists(TURBOCHARGING_NODE)) {
             mTurboChargingPreference.setEnabled(true);
             mTurboChargingPreference.setOnPreferenceChangeListener(this);

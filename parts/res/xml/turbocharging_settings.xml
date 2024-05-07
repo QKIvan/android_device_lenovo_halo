@@ -19,7 +19,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/turbocharging_enable_title">
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="turbocharging_enable"
         android:defaultValue="false"
         android:title="@string/turbocharging_enable_title"

@@ -21,7 +21,7 @@ import android.os.Bundle;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.settings.R;
 import org.lineageos.settings.utils.FileUtils;
@@ -29,14 +29,14 @@ import org.lineageos.settings.utils.FileUtils;
 public class ByPassChargingSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private SwitchPreference mByPasschargingPreference;
+    private SwitchPreferenceCompat mByPasschargingPreference;
     private static final String BYPASSCHARGING_ENABLE_KEY = "bypasscharging_enable";
     private static final String BYPASSCHARGING_NODE = "/sys/class/qcom-battery/batt_charge_bypass_en";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.bypasscharging_settings);
-        mByPasschargingPreference = (SwitchPreference) findPreference(BYPASSCHARGING_ENABLE_KEY);
+        mByPasschargingPreference = (SwitchPreferenceCompat) findPreference(BYPASSCHARGING_ENABLE_KEY);
         if (FileUtils.fileExists(BYPASSCHARGING_NODE)) {
             mByPasschargingPreference.setEnabled(true);
             mByPasschargingPreference.setOnPreferenceChangeListener(this);

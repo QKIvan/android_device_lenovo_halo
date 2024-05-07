@@ -19,7 +19,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/bypasscharging_enable_title">
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="bypasscharging_enable"
         android:defaultValue="false"
         android:title="@string/bypasscharging_enable_title"
