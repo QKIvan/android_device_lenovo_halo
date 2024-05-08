@@ -141,25 +141,25 @@ vendor/etc/card-defs.xml
 vendor/etc/microphone_characteristics.xml
 vendor/etc/usecaseKvManager.xml
 
-# Audio (AGM)
--vendor/lib/libagm.so
--vendor/lib64/libagm.so
--vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
+# Audio (AGM) - from Pong
+-vendor/lib/libagm.so|1f9ce3323e533563f2cdd49c3ecd5cdb525466cb
+-vendor/lib64/libagm.so|17a7584f47c81c1021b08bb56300d4227c28ff75
+-vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so|b4ea2cd4c9d6de00b88b3b422fae1fe821db155e
 
-# Audio (Listen)
-vendor/lib64/libcapiv2svacnnvendor.so
-vendor/lib64/libcapiv2svarnnvendor.so
-vendor/lib64/libcapiv2uvvendor.so
-vendor/lib64/libeai_fixed.so
-vendor/lib64/libeai_float.so
-vendor/lib64/liblistensoundmodel2vendor.so
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
+# Audio (Listen) - from Pong
+vendor/lib64/libcapiv2svacnnvendor.so|53c27d0f2b97300a4694dc27cdb79210a82d42ab
+vendor/lib64/libcapiv2svarnnvendor.so|b044ca4333afff15a5ecf3a7d04d8b9f4a7932d8
+vendor/lib64/libcapiv2uvvendor.so|5622bfe438265a926f87fb4e04f2af603ff80548
+vendor/lib64/libeai_fixed.so|d43c8f3a75f5ae4fcf9cd11a15832fbcd95fdd5a
+vendor/lib64/libeai_float.so|883e4f4e6d64adf9ffbe2d4aaef1ede015611826
+vendor/lib64/liblistensoundmodel2vendor.so|5da2dd0c654427c1ad347de2212e0d25bfb4cf32
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so|4401f02ca14b99d9ceba4eb5cce0aaa5727fa96e
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so|f91f1059168ae7e6fbb79a7c37041271408de5f9
 
-# Audio (soundfx)
-system_ext/etc/permissions/audiosphere.xml
-system_ext/framework/audiosphere.jar
-vendor/lib64/soundfx/libasphere.so
+# Audio (soundfx) - from Pong
+system_ext/etc/permissions/audiosphere.xml|015ad7be4921039238bfa3d34d052d752453e49c
+system_ext/framework/audiosphere.jar|3c42dff6da0571acd9ea466983c7f6354d588bb3
+vendor/lib64/soundfx/libasphere.so|dedb81e11bb0234d70584694500ebc32d69c4fc0
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -1101,59 +1101,59 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.limits-service.xml
 vendor/lib64/vendor.qti.hardware.limits@1.0.so
 vendor/lib64/vendor.qti.hardware.limits@1.1.so
 
-# Media
-system_ext/lib64/libmmosal.so
-system_ext/lib64/libmmparser_lite.so
-vendor/bin/hw/vendor.qti.media.c2@1.0-service
-vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
-vendor/bin/init.qti.media.sh
-vendor/etc/init/init.qti.media.rc
-vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
-vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc
-vendor/etc/media_cape/video_system_specs.json
-vendor/etc/media_taro/video_system_specs.json
-vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
-vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
-vendor/etc/vintf/manifest/c2_manifest_vendor.xml
-vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
-vendor/etc/media_codecs.xml
-vendor/etc/media_codecs_c2_audio.xml
-vendor/etc/media_codecs_cape.xml
-vendor/etc/media_codecs_cape_vendor.xml
-vendor/etc/media_codecs_performance_cape.xml
-vendor/etc/media_codecs_performance_cape_vendor.xml
-vendor/etc/media_codecs_vendor_audio.xml
-vendor/etc/media_profiles.xml
-vendor/etc/media_profiles_V1_0.xml
-vendor/etc/media_profiles_cape.xml
-vendor/etc/media_profiles_taro.xml
-vendor/lib/libqconfigclient.so
-vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/libmmosal_vendor.so
-vendor/lib64/libqc2audio_base.so
-vendor/lib64/libqc2audio_basecodec.so
-vendor/lib64/libqc2audio_core.so
-vendor/lib64/libqc2audio_hooks.so
-vendor/lib64/libqc2audio_hwaudiocodec.so
-vendor/lib64/libqc2audio_platform.so
-vendor/lib64/libqc2audio_swaudiocodec.so
-vendor/lib64/libqc2audio_utils.so
-vendor/lib64/libqc2colorconvertfilter.so
-vendor/lib64/libqc2filter.so
-vendor/lib64/libqc2vppfilter.so
-vendor/lib64/libqcodec2_base.so
-vendor/lib64/libqcodec2_basecodec.so
-vendor/lib64/libqcodec2_core.so
-vendor/lib64/libqcodec2_filterbase.so
-vendor/lib64/libqcodec2_hooks.so
-vendor/lib64/libqcodec2_mockfilter.so
-vendor/lib64/libqcodec2_mockqc2filter.so
-vendor/lib64/libqcodec2_platform.so
-vendor/lib64/libqcodec2_utils.so
-vendor/lib64/libqcodec2_v4l2codec.so
-vendor/lib64/libqconfigclient.so
-vendor/lib64/libvideotxr.so
-vendor/lib64/libvideoutils.so
+# Media - from Pong
+system_ext/lib64/libmmosal.so|d46f10b470ecd829c6f2a424566f1cbbc6ebe234
+system_ext/lib64/libmmparser_lite.so|be18953c8c05af2af44bf7feccf2de4fdedaa3a3
+vendor/bin/hw/vendor.qti.media.c2@1.0-service|dc92aa607f40e5cc5fa7942d8627db4644a37f01
+vendor/bin/hw/vendor.qti.media.c2audio@1.0-service|b5b3ce397500e45ae3963983f2714e5b62be3556
+vendor/bin/init.qti.media.sh|8a5284f1e1c70ef2366a526cfd64b50f123c0cda
+vendor/etc/init/init.qti.media.rc|ef1332dce782443ffbd36b28c8349611535c6d5a
+vendor/etc/init/vendor.qti.media.c2@1.0-service.rc|542d2ae2a92ee21dbb63716ff49392e8e6e433f4
+vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc|51841b9c67dd26b7fe82e24109f1e0a663a3e04a
+vendor/etc/media_cape/video_system_specs.json|8a79d1c5876263a599062177625467cea0cfaedb
+vendor/etc/media_taro/video_system_specs.json|a5e943553e221473ec666eb34a2beebbe333f478
+vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy|1bd2621778d771207bdb1ad5ae902966fe3de683
+vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy|a134d3d5d74294ca8164056b42389b1c7dbb2b65
+vendor/etc/vintf/manifest/c2_manifest_vendor.xml|0e532bf1c7d6a0ee2e7e03a9cc3283a5bffc7f8e
+vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml|7801d5fb9104883e33e874011caa25c28b7bec71
+vendor/etc/media_codecs.xml|36c6d1dcef28b420f4b9f31e0e2b2cb4959ee637
+vendor/etc/media_codecs_c2_audio.xml|96a01590c621f86a627cccbb4074c17700a31734
+vendor/etc/media_codecs_cape.xml|28d0ebafd9b4cd8db5a62fe12a0d86aad143d2e3
+vendor/etc/media_codecs_cape_vendor.xml|5f8b37f8611073e5902e937efdfaa7ec90db43f1
+vendor/etc/media_codecs_performance_cape.xml|edcdf1b574f6b1d78b1fc2a4e661c71a0e8223c0
+vendor/etc/media_codecs_performance_cape_vendor.xml|a52e79269c4467be8bc7c0c9203248014020f6b5
+vendor/etc/media_codecs_vendor_audio.xml|673adedd72050df52f848c300acd58be4a62ba60
+vendor/etc/media_profiles.xml|eaf6421cbcf17529c89d2632fd7e97cfe9eec8d6
+vendor/etc/media_profiles_V1_0.xml|2da4310e65720a36ee8422228959795f467f102e
+vendor/etc/media_profiles_cape.xml|be935b334f77b6a9ce334b997f762e4c12a98e89
+vendor/etc/media_profiles_taro.xml|3d133e9eee1f37276db517ed039b940721451e4c
+vendor/lib/libqconfigclient.so|66c19a3d809f1f2cff54fd02d4c83ac7eebcc871
+vendor/lib64/libQcelp13SwCodec.so|61069cee238d8d9cde0ececd9516b1995c6a93ec
+vendor/lib64/libmmosal_vendor.so|882bf2623bc739b5441c51032ad5532124dfa277
+vendor/lib64/libqc2audio_base.so|ab5f7cfb355c1d61c7fb4f8cae7f70b44ecd8fc0
+vendor/lib64/libqc2audio_basecodec.so|b3885ed642e34ea6ac7bf69b108cfea42a242d18
+vendor/lib64/libqc2audio_core.so|5d36387cc2c92abbbc61a584fd2c9d87ff836135
+vendor/lib64/libqc2audio_hooks.so|42c8828920baef5dd6811868fd73b66bdd78dfd1
+vendor/lib64/libqc2audio_hwaudiocodec.so|42c1e0d4d0d4805724c62c4f83b204ece9beb36e
+vendor/lib64/libqc2audio_platform.so|be4dcac4ab99c21cccb68a0d5db59f04d007319b
+vendor/lib64/libqc2audio_swaudiocodec.so|5ffde779f666d0974c04f86a51208b39a62655ba
+vendor/lib64/libqc2audio_utils.so|b06a8bc2fe9f218f8881a6f61c83e8b3cbab3aaa
+vendor/lib64/libqc2colorconvertfilter.so|4d6b0c25b1ca6be2f9d969aa0cd3f31a77165022
+vendor/lib64/libqc2filter.so|9d3103fbb37e13e1054c66a4afc50a59e394d6e8
+vendor/lib64/libqc2vppfilter.so|c2a30e991c648584b2373144ccadd4812cae8d1e
+vendor/lib64/libqcodec2_base.so|f5ff12fd00f2db8e2e6fa10f0b6cfc186503b850
+vendor/lib64/libqcodec2_basecodec.so|d45c066ca64d2bdad0bb948095420a2b472328fc
+vendor/lib64/libqcodec2_core.so|79a1234bf0c4b190c1b6b507f9a2448f92fdd10c
+vendor/lib64/libqcodec2_filterbase.so|d79d084b6c6b019e6d5ef322644317aeeeb58fb1
+vendor/lib64/libqcodec2_hooks.so|632430e085acb1cd0a1f68ef6317af210e613d89
+vendor/lib64/libqcodec2_mockfilter.so|2ff3a8945eacb53ae837b1cb47361fb42055225b
+vendor/lib64/libqcodec2_mockqc2filter.so|3cbd5053755e5570e90c95e573ef6f1538525105
+vendor/lib64/libqcodec2_platform.so|de86d78769d33dae14f79ba78186695b712f46fe
+vendor/lib64/libqcodec2_utils.so|71fdb4bb71574be2408f19af3d5b6adf4659d270
+vendor/lib64/libqcodec2_v4l2codec.so|b426637118edde4ab1aa1ef5e601473ac2978497
+vendor/lib64/libqconfigclient.so|77ce55cfd52d89475237eeddf0b656670e5061cf
+vendor/lib64/libvideotxr.so|65be9a71de74b719843d4cc1589a5e9bfc4a800a
+vendor/lib64/libvideoutils.so|8d2d3f35ddd3eebdbdc3e7b359898ba65f6b1971
 
 # MMI
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
@@ -1857,27 +1857,27 @@ vendor/firmware/aw86917/aw8697x_rtp.bin
 vendor/firmware/aw86917_haptic.bin
 vendor/firmware/haptic_ram.bin
 
-# VPP
-vendor/bin/hw/qconfigservice
-vendor/bin/vppservice
-vendor/etc/configstore/vpp.configstore.xml
-vendor/etc/init/qconfig.rc
-vendor/etc/init/vppservice.rc
-vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig@1.0-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.vpp@2.0-service.xml
-vendor/lib64/libvppclient.so
-vendor/lib64/libvppcommon.so
-vendor/lib64/libvpphcp.so
-vendor/lib64/libvpphvx.so
-vendor/lib64/libvppimmotion.so
-vendor/lib64/libvpplibrary.so
-vendor/lib64/libvpptestutils.so
-vendor/lib64/qti.video.utils.videobufferlayout.so
-vendor/lib64/vendor.qti.hardware.qconfig@1.0.so
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so
-vendor/lib64/vendor.qti.hardware.vpp@1.2.so
-vendor/lib64/vendor.qti.hardware.vpp@1.3.so
-vendor/lib64/vendor.qti.hardware.vpp@2.0.so
+# VPP - from Pong
+vendor/bin/hw/qconfigservice|3f989d3a1540fbe90b98dfe997eb541f73b7f883
+vendor/bin/vppservice|ff67cef4f17be1c57f3164c2e0c5ec6f2b325d3c
+vendor/etc/configstore/vpp.configstore.xml|ed961545186c66fd9523f25866c74f2e11ee63d7
+vendor/etc/init/qconfig.rc|11ede82c36699801db420aca7db74a4972cee8b1
+vendor/etc/init/vppservice.rc|005de95a8f7aa351a8a4e9c7ee765233b5d1f937
+vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig@1.0-service.xml|9dac50cd185da92d442e452bcccf9940291e6610
+vendor/etc/vintf/manifest/vendor.qti.hardware.vpp@2.0-service.xml|4eb04669d5434666f532020fd5ad27d019c0360d
+vendor/lib64/libvppclient.so|e9c6370ed29a0dafaa3f7cdcb11d31f91a99d826
+vendor/lib64/libvppcommon.so|6d8de8bf38e05a74ff21669addcaf893e3a76deb
+vendor/lib64/libvpphcp.so|a4747625708f43d0ccbbbc749ba4a762b1d48d4c
+vendor/lib64/libvpphvx.so|0d5bba4b1ff7f38f771261f0e6b167790ff79591
+vendor/lib64/libvppimmotion.so|e222cc16edeee0aab3285ec32f8a730b8c38da8a
+vendor/lib64/libvpplibrary.so|a94464e1e323240adab83ffcb9bf664b92f7a548
+vendor/lib64/libvpptestutils.so|d8fd6e531cf5ad5bdd83791c5a065d68a5901fd5
+vendor/lib64/qti.video.utils.videobufferlayout.so|f6d56633bd716586bde4faea5d48edb9a59cd7a1
+vendor/lib64/vendor.qti.hardware.qconfig@1.0.so|cf48baafaed6ad10896805eeaa975c5fbd196ad7
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so|8b236516cc71e8a21b8d07baa7381507efb483db
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so|ecae960e50542361d804b3a7ffa1737c80fde28b
+vendor/lib64/vendor.qti.hardware.vpp@1.3.so|b51868e78e73b466624a91949aab6832ba94e156
+vendor/lib64/vendor.qti.hardware.vpp@2.0.so|8345478f7869eccc4a05931a4f1cfd449605d6ed
 
 # VPU firmware
 vendor/firmware/vpu20_1v.mbn
